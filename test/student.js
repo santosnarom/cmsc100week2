@@ -48,6 +48,8 @@ describe('student', function(){
 				res.should.have.status(200);
 				res.body.should.be.an.Object;
 				res.body.should.have.keys('name', 'studno','id');
+				res.body.should.have.property('name', 'Narom Santos');
+				res.body.should.have.property('studno', '2013-23228');
 				done();
 			});
 		});
