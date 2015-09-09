@@ -46,10 +46,8 @@ describe('student', function(){
 			.end(function(err,res){
 				if(err) throw err;
 				res.should.have.status(200);
-				studrec.should.have.properties('name', 'studno');
-				studrec['name'].should.be.type('string');
-				studrec['studno'].should.be.type('string');
-				studrec['studno'].should.have.length(10);
+				res.body.should.be.an.Object;
+				res.body.should.have.keys('name', 'studno','id');
 				done();
 			});
 		});
