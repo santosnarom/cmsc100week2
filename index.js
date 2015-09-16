@@ -17,6 +17,7 @@ app.get('/students', function(req,res){
 app.use(require('body-parser')());
 app.use(require('method-override')());
 app.use(require(__dirname+'/config/router')(express.Router()));
+app.use(express.static(__dirname + '/public'));
 
 //listens to the request
 var server = app.listen(5000, function(){
